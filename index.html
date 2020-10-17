@@ -10,12 +10,92 @@
 			integrity="sha512-ZRv40llEogRmoWgZwnsqke3HNzJ0kiI0+pcMgiz2bxO6Ew1DVBtWjVn0qjrXdT3+u+pSN36gLgmJiiQ3cQtyzA=="
 			crossorigin="anonymous"
 		/>
+		<script
+			src="https://kit.fontawesome.com/3ea7a994a9.js"
+			crossorigin="anonymous"
+		></script>
 		<link rel="stylesheet" href="./Assets/css/style.css" />
 	</head>
 	<body>
-		<div>
-			<h1>The is a heading</h1>
-			<p>This is a paragraph.</p>
+		<header class="container has-background-info is-fluid m-4">
+			<h1 class="title has-text-white is-1 has-text-centered">
+				Weather Dashboard
+			</h1>
+		</header>
+		<div class="columns">
+			<div class="column is-one-fifth has-background-grey m-4 p-2">
+				<aside class="menu">
+					<form class="field">
+						<label class="label">Search for a City:</label>
+						<input
+							class="input is-inline"
+							type="text"
+							name="inputCity"
+						/>
+						<button class="button" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</form>
+					<div class="">
+						<button class="button is-block m-1">Fakesville</button>
+						<button class="button is-block m-1">Fakesville</button>
+						<button class="button is-block m-1">Fakesville</button>
+						<button class="button is-block m-1">Fakesville</button>
+						<button class="button is-block m-1">Fakesville</button>
+					</div>
+				</aside>
+			</div>
+
+			<div class="column has-background-info-light m-4 p-2">
+				<main>
+					<div class="card m-4">
+						<div class="card-content">
+							<p class="title p-4">City & Date</p>
+							<p class="subtitle p-2">Temperature:</p>
+							<p class="subtitle p-2">Humidity:</p>
+							<p class="subtitle p-2">Wind Speed:</p>
+							<p class="subtitle p-2">UV Index:</p>
+						</div>
+					</div>
+				</main>
+				<section>
+					<div class="card m-4">
+						<p class="title p-4">5-Day Forecast:</p>
+						<div class="card-content tile is-ancestor">
+							<div class="tile is-block">
+								<p>Date</p>
+								<p>image</p>
+								<p>Temp:</p>
+								<p>Humidity:</p>
+							</div>
+							<div class="tile is-block">
+								<p>Date</p>
+								<p>image</p>
+								<p>Temp:</p>
+								<p>Humidity:</p>
+							</div>
+							<div class="tile is-block">
+								<p>Date</p>
+								<p>image</p>
+								<p>Temp:</p>
+								<p>Humidity:</p>
+							</div>
+							<div class="tile is-block">
+								<p>Date</p>
+								<p>image</p>
+								<p>Temp:</p>
+								<p>Humidity:</p>
+							</div>
+							<div class="ttile is-block">
+								<p>Date</p>
+								<p>image</p>
+								<p>Temp:</p>
+								<p>Humidity:</p>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
 		</div>
 
 		<script src="./Assets/js/index.js"></script>

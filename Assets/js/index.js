@@ -1,1 +1,4 @@
-alert('js attached');
+$(document).ready(function () {
+
+    
+}
