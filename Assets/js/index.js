@@ -17,7 +17,7 @@ $(document).ready(function () {
     function getCurrentWeatherData(city) {
 
 
-        var queryURL = "http://api.openweathermap.org/data/2.5/weather?appid=16e2a29d08bf4766fcdb6563c3920b3d&q=" + city;
+        var queryURL = "http://api.openweathermap.org/data/2.5/weather?appid=16e2a29d08bf4766fcdb6563c3920b3d&units=imperial&q=" + city;
 
         $.ajax({
             url: queryURL,
@@ -35,16 +35,19 @@ $(document).ready(function () {
         
         var cityName = info.name;
         var dateTime = info.dt;
-        console.log(cityName);
-//console.log(typeof dateTime);
-        console.log(dayjs.unix(dateTime));
 
         var currentDate = dayjs.unix(dateTime).format('MM/DD/YYYY');
-        console.log(currentDate);
-
         
 
 
+
+
+        //render current weather data
+        $('#city-n-date').text(cityName + " (" + currentDate + ")");
+        $('#city-temp').html("Temprature: " + info.main.temp + "&#8457");
+        $('#city-humi').html("Humidity: " + info.main.humidity + "%");
+        $('#city-wind').html("Wind Speed: " + info.wind.speed + " MPH");
+        $('#city-uv').html("UV Index: ");
 
     };
 
