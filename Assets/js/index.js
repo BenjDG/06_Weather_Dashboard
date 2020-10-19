@@ -81,42 +81,26 @@ $(document).ready(function () {
             method: "GET"
         })
             .then(function (res) {
-                 console.log(res.daily[0].weather[0].icon);
+                console.log(res.daily[0].weather[0].description);
                 // console.log(res.daily[0].humidity);
                 // console.log(res.daily[0].dt);
                 // console.log(dayjs.unix(res.daily[0].dt).format('MM/DD/YYYY'));
                 // console.log(res.daily[0].feels_like.day);
                 // console.log(toF(res.daily[0].feels_like.day));
-
                 //var $forecastCard = $('#forecast-card > div > p >');
-
                 //var $fdate = $forecastCard.find('fdate');
-
                 //console.dir($forecastCard);
 
                 $('#forecast-card').empty();
                 for (var i = 0; i < 5; i++) {
-                    
                     $div = $('<div>').attr('class', 'tile is-block');
                     $date = $('<p>').text(dayjs.unix(res.daily[i].dt).format('MM/DD/YYYY'));
-
-
-                    $image = $('<p>').text('image: ' + res.daily[i].weather[0].icon);
-
-
+                    $image = $('<img>').attr('src','http://openweathermap.org/img/wn/' + res.daily[i].weather[0].icon + '@2x.png').attr('alt', res.daily[i].weather[0].description);
                     $temp = $('<p>').html("Temp: " + toF(res.daily[i].feels_like.day) + "&#8457");
-
-
                     $humi = $('<p>').text("Humidity: " + res.daily[i].humidity + "%");
-
-
                     $div.append($date, $image, $temp, $humi);
-
                     $('#forecast-card').append($div);
-
                 }
-
-
 
                 // //res.list[0].dt
                 // var ftime = dayjs.unix(res.list[3].dt).format('MM/DD/YYYY');
