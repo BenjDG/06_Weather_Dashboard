@@ -15,8 +15,8 @@ $(document).ready(function () {
         getCurrentWeatherData(inputCity);
         buttonFactory(inputCity);
         saveRecentSearchToList(inputCity);
-        console.log(inputCity);
-        console.log(recentCityNames);
+        //console.log(inputCity);
+        //console.log(recentCityNames);
     });
 
 
@@ -51,6 +51,9 @@ $(document).ready(function () {
         var lat = info.coord.lat;
         var lon = info.coord.lon;
 
+        //call forecast getData
+        getForcast(lat, lon);
+
         //render current weather data
         renderUV(lat, lon);
         $('#city-n-date').text(cityName + " (" + currentDate + ")");
@@ -68,9 +71,22 @@ $(document).ready(function () {
                 });
         }
     };
-    //return 5-day forcast
-    function renderForcast() {
 
+
+    //return 5-day forcast
+    function getForcast(lat, lon) {
+        var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat +"&lon=" + lon + "&exclude=current,minutely,hourly,alerts&appid=16e2a29d08bf4766fcdb6563c3920b3d";
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        })
+            .then(function (res) {
+                console.log(res);
+                // console.log(dayjs.unix(res.list[3].dt).format('MM/DD/YYYY'));
+                // //res.list[0].dt
+                // var ftime = dayjs.unix(res.list[3].dt).format('MM/DD/YYYY');
+                // console.log(ftime);
+            })
     }
 
     //save city as a button
@@ -85,7 +101,7 @@ $(document).ready(function () {
     }
     //add to local storage, recently search cities list
     function saveRecentSearchToList(city) {
-        console.log(recentCityNames);
+        //console.log(recentCityNames);
         recentCityNames.push(city);
         localStorage.setItem('recentCityStorage', JSON.stringify(recentCityNames));
 
@@ -95,7 +111,7 @@ $(document).ready(function () {
     }
 
     function hydrateDataFromLocalstorage() {
-        console.dir(recentCityNames);
+        //console.dir(recentCityNames);
         var recentCityStorage = JSON.parse(localStorage.getItem('recentCityStorage'));
         if (recentCityStorage !== null) {
             recentCityNames = recentCityStorage;
