@@ -75,14 +75,49 @@ $(document).ready(function () {
 
     //return 5-day forcast
     function getForcast(lat, lon) {
-        var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat +"&lon=" + lon + "&exclude=current,minutely,hourly,alerts&appid=16e2a29d08bf4766fcdb6563c3920b3d";
+        var queryURL = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=current,minutely,hourly,alerts&appid=16e2a29d08bf4766fcdb6563c3920b3d";
         $.ajax({
             url: queryURL,
             method: "GET"
         })
             .then(function (res) {
-                console.log(res);
-                // console.log(dayjs.unix(res.list[3].dt).format('MM/DD/YYYY'));
+                 console.log(res.daily[0].weather[0].icon);
+                // console.log(res.daily[0].humidity);
+                // console.log(res.daily[0].dt);
+                // console.log(dayjs.unix(res.daily[0].dt).format('MM/DD/YYYY'));
+                // console.log(res.daily[0].feels_like.day);
+                // console.log(toF(res.daily[0].feels_like.day));
+
+                //var $forecastCard = $('#forecast-card > div > p >');
+
+                //var $fdate = $forecastCard.find('fdate');
+
+                //console.dir($forecastCard);
+
+                $('#forecast-card').empty();
+                for (var i = 0; i < 5; i++) {
+                    
+                    $div = $('<div>').attr('class', 'tile is-block');
+                    $date = $('<p>').text(dayjs.unix(res.daily[i].dt).format('MM/DD/YYYY'));
+
+
+                    $image = $('<p>').text('image: ' + res.daily[i].weather[0].icon);
+
+
+                    $temp = $('<p>').html("Temp: " + toF(res.daily[i].feels_like.day) + "&#8457");
+
+
+                    $humi = $('<p>').text("Humidity: " + res.daily[i].humidity + "%");
+
+
+                    $div.append($date, $image, $temp, $humi);
+
+                    $('#forecast-card').append($div);
+
+                }
+
+
+
                 // //res.list[0].dt
                 // var ftime = dayjs.unix(res.list[3].dt).format('MM/DD/YYYY');
                 // console.log(ftime);
@@ -121,4 +156,9 @@ $(document).ready(function () {
         }
     }
 
+    function toF(k) {
+        var f = (k - 273.15) * 9 / 5 + 32;
+        return f.toFixed();
+    }
+    //console.log(toF(300));
 });
