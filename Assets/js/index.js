@@ -66,8 +66,8 @@ $(document).ready(function () {
                     $div = $('<div>').attr('class', 'tile is-block');
                     $date = $('<p>').text(dayjs.unix(res.daily[i].dt).format('MM/DD/YYYY'));
                     $image = $('<img>').attr('src', 'https://openweathermap.org/img/wn/' + res.daily[i].weather[0].icon + '@2x.png').attr('alt', res.daily[i].weather[0].description);
-                    $temp = $('<p>').html("Temp: " + toF(res.daily[i].feels_like.day) + "&#8457");
-                    $humi = $('<p>').text("Humidity: " + res.daily[i].humidity + "%");
+                    $temp = $('<p>').html("Temp " + toF(res.daily[i].feels_like.day) + "&#8457");
+                    $humi = $('<p>').text("Humidity " + res.daily[i].humidity + "%");
                     $div.append($date, $image, $temp, $humi);
                     $('#forecast-card').append($div);
                 }
@@ -77,7 +77,7 @@ $(document).ready(function () {
     function buttonFactory(cityName) {
         var $button = $('<button>')
         $button.text(cityName);
-        $button.attr('class', 'button is-block m-1');
+        $button.attr('class', 'button is-medium is-fullwidth is-rounded m-1');
         $('#button-list').prepend($button);
         addButtonListener();
     }

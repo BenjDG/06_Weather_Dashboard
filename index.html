@@ -17,18 +17,19 @@
 		<link rel="stylesheet" href="./Assets/css/style.css" />
 	</head>
 	<body>
-		<header class="container has-background-info is-fluid m-4">
+		<header class="container.is-max-desktop has-background-info m-4">
 			<h1 class="title has-text-white is-1 has-text-centered p-2">
 				Weather Dashboard
 			</h1>
 		</header>
 		<div class="columns">
-			<div class="column is-one-fifth has-background-grey m-4 p-2">
-				<aside class="menu">
-					<form class="field">
-						<label class="label">Search for a City:</label>
+			<div class="column is-one-fifth has-background-grey m-5 p-2">
+				<aside class="menu has-text-centered p-4">
+					<label class="label has-text-light is-size-3">Search for a City</label>
+					<form class="field has-addons">
+						
 						<input
-							class="input is-inline"
+							class="input"
 							type="text"
 							name="inputCity"
 							value=""
@@ -37,20 +38,19 @@
 							<i class="fas fa-search"></i>
 						</button>
 					</form>
-					<div id="button-list">
+					<div id="button-list" class="buttons">
 					</div>
 				</aside>
 			</div>
-
-			<div id="main-page" class="column has-background-info-light m-4 p-2 is-hidden">
+			<div id="main-page" class="column has-background-info-light m-5 p-2 has-text-centered-touch is-hidden">
 				<main>
 					<div class="card m-4">
 						<div class="card-content">
 							<p id="city-n-date" class="title p-4">City & Date</p>
-							<p id="city-temp" class="subtitle p-2">Temperature:</p>
-							<p id="city-humi" class="subtitle p-2">Humidity:</p>
-							<p id="city-wind" class="subtitle p-2">Wind Speed:</p>
-							<p class="subtitle p-2">UV Index: <span id="city-uv"></span></p>
+							<p id="city-temp" class="subtitle p-2">Temperature</p>
+							<p id="city-humi" class="subtitle p-2">Humidity</p>
+							<p id="city-wind" class="subtitle p-2">Wind Speed</p>
+							<p class="subtitle p-2">UV Index <span id="city-uv"></span></p>
 						</div>
 					</div>
 				</main>
@@ -58,7 +58,6 @@
 					<div class="card m-4">
 						<p class="title p-4">5-Day Forecast:</p>
 						<div id="forecast-card"class="card-content tile is-ancestor">
-							
 						</div>
 					</div>
 				</section>
