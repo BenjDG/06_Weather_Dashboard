@@ -65,7 +65,7 @@ $(document).ready(function () {
                 for (var i = 0; i < 5; i++) {
                     $div = $('<div>').attr('class', 'tile is-block');
                     $date = $('<p>').text(dayjs.unix(res.daily[i].dt).format('MM/DD/YYYY'));
-                    $image = $('<img>').attr('src', 'http://openweathermap.org/img/wn/' + res.daily[i].weather[0].icon + '@2x.png').attr('alt', res.daily[i].weather[0].description);
+                    $image = $('<img>').attr('src', 'https://openweathermap.org/img/wn/' + res.daily[i].weather[0].icon + '@2x.png').attr('alt', res.daily[i].weather[0].description);
                     $temp = $('<p>').html("Temp: " + toF(res.daily[i].feels_like.day) + "&#8457");
                     $humi = $('<p>').text("Humidity: " + res.daily[i].humidity + "%");
                     $div.append($date, $image, $temp, $humi);
