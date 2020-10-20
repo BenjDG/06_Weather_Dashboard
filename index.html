@@ -31,6 +31,7 @@
 							class="input is-inline"
 							type="text"
 							name="inputCity"
+							value=""
 						/>
 						<button id="submit" class="button" type="submit">
 							<i class="fas fa-search"></i>
@@ -41,7 +42,7 @@
 				</aside>
 			</div>
 
-			<div class="column has-background-info-light m-4 p-2">
+			<div id="main-page" class="column has-background-info-light m-4 p-2 is-hidden">
 				<main>
 					<div class="card m-4">
 						<div class="card-content">
@@ -49,7 +50,7 @@
 							<p id="city-temp" class="subtitle p-2">Temperature:</p>
 							<p id="city-humi" class="subtitle p-2">Humidity:</p>
 							<p id="city-wind" class="subtitle p-2">Wind Speed:</p>
-							<p id="city-uv" class="subtitle p-2">UV Index:</p>
+							<p class="subtitle p-2">UV Index: <span id="city-uv"></span></p>
 						</div>
 					</div>
 				</main>
@@ -57,12 +58,7 @@
 					<div class="card m-4">
 						<p class="title p-4">5-Day Forecast:</p>
 						<div id="forecast-card"class="card-content tile is-ancestor">
-							<div class="tile is-block">
-								<p id="fdate">Date</p>
-								<p id="fimage">image</p>
-								<p id="ftemp">Temp:</p>
-								<p id="fhumi">Humidity:</p>
-							</div>
+							
 						</div>
 					</div>
 				</section>
