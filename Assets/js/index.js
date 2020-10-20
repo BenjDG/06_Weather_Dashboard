@@ -14,7 +14,7 @@ $(document).ready(function () {
     });
     //make ajax call
     function getCurrentWeatherData(city) {
-        var queryURL = "http://api.openweathermap.org/data/2.5/weather?appid=16e2a29d08bf4766fcdb6563c3920b3d&units=imperial&q=" + city;
+        var queryURL = "https://api.openweathermap.org/data/2.5/weather?appid=16e2a29d08bf4766fcdb6563c3920b3d&units=imperial&q=" + city;
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -37,7 +37,7 @@ $(document).ready(function () {
         $('#city-humi').html("Humidity: " + info.main.humidity + "%");
         $('#city-wind').html("Wind Speed: " + info.wind.speed + " MPH");
         function renderUV(latitude, longitude) {
-            var queryURL = "http://api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&appid=16e2a29d08bf4766fcdb6563c3920b3d";
+            var queryURL = "https://api.openweathermap.org/data/2.5/uvi?lat=" + latitude + "&lon=" + longitude + "&appid=16e2a29d08bf4766fcdb6563c3920b3d";
             $.ajax({
                 url: queryURL,
                 method: "GET"
