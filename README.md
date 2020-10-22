@@ -1,5 +1,6 @@
 # 06_Weather_Dashboard
 
+This weather dashboard gives you the current and 5-day forecast for a city.  It also saves your recent weather searches.
 
 <br/>
 <br/>
@@ -13,21 +14,21 @@ https://benjdg.github.io/06_Weather_Dashboard/
 
 ## Screenshot Desktop
 
-
+![weather dashboard desktop](./Assets/desktop.PNG)
 
 <br/>
 <br/>
 
 ## Screenshot Mobile
 
-
+![weather dashboard mobile](./Assets/mobile.PNG)
 
 <br/>
 <br/>
 
 ## Usage
 
-
+Type the name of a city into the search box and click the search button.
 
 
 <br/>
