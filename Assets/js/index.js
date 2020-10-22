@@ -33,6 +33,7 @@ $(document).ready(function () {
         getForcast(lat, lon);
         renderUV(lat, lon);
         $('#city-n-date').text(cityName + " (" + currentDate + ")");
+        $('#weather-icon').attr('src', 'https://openweathermap.org/img/wn/' + info.weather[0].icon + '@2x.png').attr('alt', info.weather[0].description);
         $('#city-temp').html("Temprature: " + info.main.temp + "&#8457");
         $('#city-humi').html("Humidity: " + info.main.humidity + "%");
         $('#city-wind').html("Wind Speed: " + info.wind.speed + " MPH");
@@ -44,11 +45,11 @@ $(document).ready(function () {
             })
                 .then(function (res) {
                     if (res.value < 3) {
-                        $('#city-uv').html(" " + res.value).attr('class', 'has-background-success');
+                        $('#city-uv').html(res.value).attr('class', 'has-background-success');
                     } else if (res.value >= 3 && res.value < 8) {
-                        $('#city-uv').html(" " + res.value).attr('class', 'has-background-warning');
+                        $('#city-uv').html(res.value).attr('class', 'has-background-warning');
                     } else {
-                        $('#city-uv').html(" " + res.value).attr('class', 'has-background-danger');
+                        $('#city-uv').html(res.value).attr('class', 'has-background-danger');
                     }
                 });
         }

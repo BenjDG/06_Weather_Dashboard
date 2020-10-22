@@ -14,7 +14,6 @@
 			src="https://kit.fontawesome.com/3ea7a994a9.js"
 			crossorigin="anonymous"
 		></script>
-		<link rel="stylesheet" href="./Assets/css/style.css" />
 	</head>
 	<body>
 		<header class="container.is-max-desktop has-background-info m-4">
@@ -27,7 +26,6 @@
 				<aside class="menu has-text-centered p-4">
 					<label class="label has-text-light is-size-3">Search for a City</label>
 					<form class="field has-addons">
-						
 						<input
 							class="input"
 							type="text"
@@ -47,10 +45,11 @@
 					<div class="card m-4">
 						<div class="card-content">
 							<p id="city-n-date" class="title p-4">City & Date</p>
+							<img id="weather-icon" class="subtitle p-2" />
 							<p id="city-temp" class="subtitle p-2">Temperature</p>
 							<p id="city-humi" class="subtitle p-2">Humidity</p>
 							<p id="city-wind" class="subtitle p-2">Wind Speed</p>
-							<p class="subtitle p-2">UV Index <span id="city-uv"></span></p>
+							<p class="subtitle p-2">UV Index:&nbsp<span id="city-uv"></span></p>
 						</div>
 					</div>
 				</main>
